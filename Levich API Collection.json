@@ -1,0 +1,305 @@
+{
+    "info": {
+        "_postman_id": "ee076637-825d-4af6-a751-07d895281a3c",
+        "name": "Levich API",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+        "description": ""
+    },
+    "item": [
+        {
+            "name": "signup",
+            "request": {
+                "method": "POST",
+                "url": {
+                    "raw": "https://levich-assignment-a93p.onrender.com/signup",
+                    "path": [
+                        "signup"
+                    ],
+                    "protocol": "https",
+                    "host": [
+                        "levich-assignment-a93p",
+                        "onrender",
+                        "com"
+                    ]
+                },
+                "body": {
+                    "mode": "raw",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    },
+                    "raw": "{\r\n  \"name\": \"Test User\",\r\n  \"email\": \"testuser@example.com\",\r\n  \"password\": \"test123\"\r\n}"
+                }
+            }
+        },
+        {
+            "name": "login",
+            "request": {
+                "method": "POST",
+                "url": {
+                    "raw": "https://levich-assignment-a93p.onrender.com/login",
+                    "path": [
+                        "login"
+                    ],
+                    "protocol": "https",
+                    "host": [
+                        "levich-assignment-a93p",
+                        "onrender",
+                        "com"
+                    ]
+                },
+                "body": {
+                    "mode": "raw",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    },
+                    "raw": "{\r\n  \"email\": \"testuser@example.com\",\r\n  \"password\": \"newpassword12\"\r\n}"
+                }
+            }
+        },
+        {
+            "name": "comments",
+            "request": {
+                "method": "POST",
+                "url": {
+                    "raw": "https://levich-assignment-a93p.onrender.com/comments",
+                    "path": [
+                        "comments"
+                    ],
+                    "protocol": "https",
+                    "host": [
+                        "levich-assignment-a93p",
+                        "onrender",
+                        "com"
+                    ]
+                },
+                "body": {
+                    "mode": "raw",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    },
+                    "raw": "{\r\n  \"content\": \"This is a test comment2.\"\r\n}"
+                },
+                "auth": {
+                    "type": "bearer",
+                    "bearer": [
+                        {
+                            "key": "token",
+                            "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiZW1haWwiOiJ0ZXN0dXNlckBleGFtcGxlLmNvbSIsImlhdCI6MTc0ODQwNjI1OCwiZXhwIjoxNzQ4NDA3MTU4fQ.bVJpc5DpewWJ_MvvePq8KeVp3tpi984Tj1MPcAEzqLQ",
+                            "type": "string"
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "name": "permissions",
+            "request": {
+                "method": "POST",
+                "url": {
+                    "raw": "https://levich-assignment-a93p.onrender.com/permissions/2",
+                    "path": [
+                        "permissions",
+                        "2"
+                    ],
+                    "protocol": "https",
+                    "host": [
+                        "levich-assignment-a93p",
+                        "onrender",
+                        "com"
+                    ]
+                },
+                "body": {
+                    "mode": "raw",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    },
+                    "raw": "{\r\n  \"can_read\": 1,\r\n  \"can_write\": 1,\r\n  \"can_delete\": 1\r\n}"
+                },
+                "auth": {
+                    "type": "bearer",
+                    "bearer": [
+                        {
+                            "key": "token",
+                            "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiZW1haWwiOiJ0ZXN0dXNlckBleGFtcGxlLmNvbSIsImlhdCI6MTc0ODQwNjI1OCwiZXhwIjoxNzQ4NDA3MTU4fQ.bVJpc5DpewWJ_MvvePq8KeVp3tpi984Tj1MPcAEzqLQ",
+                            "type": "string"
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "name": "refresh-token",
+            "request": {
+                "method": "POST",
+                "url": {
+                    "raw": "https://levich-assignment-a93p.onrender.com/refresh-token",
+                    "path": [
+                        "refresh-token"
+                    ],
+                    "protocol": "https",
+                    "host": [
+                        "levich-assignment-a93p",
+                        "onrender",
+                        "com"
+                    ]
+                },
+                "body": {
+                    "mode": "raw",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    },
+                    "raw": "{\n  \"refreshToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiZW1haWwiOiJ0ZXN0dXNlckBleGFtcGxlLmNvbSIsImlhdCI6MTc0ODQwNjI1OCwiZXhwIjoxNzQ5MDExMDU4fQ.k1ukezZ9GLoMvMnlS8w4hFcPVgQKKNHwcKiBaBbw00o\"\n}"
+                }
+            }
+        },
+        {
+            "name": "GetComments",
+            "request": {
+                "method": "GET",
+                "url": {
+                    "raw": "https://levich-assignment-a93p.onrender.com/comments",
+                    "path": [
+                        "comments"
+                    ],
+                    "protocol": "https",
+                    "host": [
+                        "levich-assignment-a93p",
+                        "onrender",
+                        "com"
+                    ]
+                },
+                "auth": {
+                    "type": "bearer",
+                    "bearer": [
+                        {
+                            "key": "token",
+                            "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiZW1haWwiOiJ0ZXN0dXNlckBleGFtcGxlLmNvbSIsImlhdCI6MTc0ODQwNjQzOCwiZXhwIjoxNzQ4NDA3MzM4fQ.SNX3aPKygkRk4Rr1Go--HH76r6WWom4j_1QisRVgalM",
+                            "type": "string"
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "name": "Delete Comments",
+            "request": {
+                "method": "DELETE",
+                "url": {
+                    "raw": "https://levich-assignment-a93p.onrender.com/comments/1",
+                    "path": [
+                        "comments",
+                        "1"
+                    ],
+                    "protocol": "https",
+                    "host": [
+                        "levich-assignment-a93p",
+                        "onrender",
+                        "com"
+                    ]
+                },
+                "auth": {
+                    "type": "bearer",
+                    "bearer": [
+                        {
+                            "key": "token",
+                            "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiZW1haWwiOiJ0ZXN0dXNlckBleGFtcGxlLmNvbSIsImlhdCI6MTc0ODQwNjI1OCwiZXhwIjoxNzQ4NDA3MTU4fQ.bVJpc5DpewWJ_MvvePq8KeVp3tpi984Tj1MPcAEzqLQ",
+                            "type": "string"
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "name": "logout",
+            "request": {
+                "method": "POST",
+                "url": {
+                    "raw": "https://levich-assignment-a93p.onrender.com/logout",
+                    "path": [
+                        "logout"
+                    ],
+                    "protocol": "https",
+                    "host": [
+                        "levich-assignment-a93p",
+                        "onrender",
+                        "com"
+                    ]
+                },
+                "auth": {
+                    "type": "bearer",
+                    "bearer": [
+                        {
+                            "key": "token",
+                            "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiZW1haWwiOiJ0ZXN0dXNlckBleGFtcGxlLmNvbSIsImlhdCI6MTc0ODQwNjQzOCwiZXhwIjoxNzQ4NDA3MzM4fQ.SNX3aPKygkRk4Rr1Go--HH76r6WWom4j_1QisRVgalM",
+                            "type": "string"
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "name": "forgot-password",
+            "request": {
+                "method": "POST",
+                "url": {
+                    "raw": "https://levich-assignment-a93p.onrender.com/forgot-password",
+                    "path": [
+                        "forgot-password"
+                    ],
+                    "protocol": "https",
+                    "host": [
+                        "levich-assignment-a93p",
+                        "onrender",
+                        "com"
+                    ]
+                },
+                "body": {
+                    "mode": "raw",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    },
+                    "raw": "{\n  \"email\": \"testuser@example.com\"\n}"
+                }
+            }
+        },
+        {
+            "name": "resetPassword",
+            "request": {
+                "method": "POST",
+                "url": {
+                    "raw": "https://levich-assignment-a93p.onrender.com/reset-password",
+                    "path": [
+                        "reset-password"
+                    ],
+                    "protocol": "https",
+                    "host": [
+                        "levich-assignment-a93p",
+                        "onrender",
+                        "com"
+                    ]
+                },
+                "body": {
+                    "mode": "raw",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    },
+                    "raw": "{\n  \"resetToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiZW1haWwiOiJ0ZXN0dXNlckBleGFtcGxlLmNvbSIsImlhdCI6MTc0ODQwNjQ4NiwiZXhwIjoxNzQ4NDA3Mzg2fQ.i4AbtcZ457iR_NHFt_V19N_ukxcKWtVHJod8rjPfjfc\",\n  \"newPassword\": \"newpassword12\"\n}"
+                }
+            }
+        }
+    ]
+}
