@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: levich-assignment
+    env: node
+    buildCommand: npm install
+    startCommand: node index.js
+    envVars:
+      - key: ACCESS_TOKEN_SECRET
+        value: your_access_secret_key
+      - key: REFRESH_TOKEN_SECRET
+        value: your_refresh_secret_key
+      - key: PORT
+        value: 10000
+    autoDeploy: true
