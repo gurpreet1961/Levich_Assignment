@@ -60,6 +60,12 @@ https://levich-assignment-a93p.onrender.com
   	"password": "test123"
   }
   ```
+- **Curl:**
+  ```sh
+  curl -X POST https://levich-assignment-a93p.onrender.com/signup \
+    -H "Content-Type: application/json" \
+    -d '{"name":"Test User","email":"testuser@example.com","password":"test123"}'
+  ```
 - **Response:**
   ```json
   { "message": "User registered" }
@@ -74,6 +80,12 @@ https://levich-assignment-a93p.onrender.com
   	"email": "testuser@example.com",
   	"password": "test123"
   }
+  ```
+- **Curl:**
+  ```sh
+  curl -X POST https://levich-assignment-a93p.onrender.com/login \
+    -H "Content-Type: application/json" \
+    -d '{"email":"testuser@example.com","password":"test123"}'
   ```
 - **Response:**
   ```json
@@ -90,6 +102,12 @@ https://levich-assignment-a93p.onrender.com
   ```json
   { "email": "testuser@example.com" }
   ```
+- **Curl:**
+  ```sh
+  curl -X POST https://levich-assignment-a93p.onrender.com/forgot-password \
+    -H "Content-Type: application/json" \
+    -d '{"email":"testuser@example.com"}'
+  ```
 - **Response:**
   ```json
   { "message": "Password reset token (mocked)", "resetToken": "..." }
@@ -105,6 +123,12 @@ https://levich-assignment-a93p.onrender.com
   	"newPassword": "newpassword12"
   }
   ```
+- **Curl:**
+  ```sh
+  curl -X POST https://levich-assignment-a93p.onrender.com/reset-password \
+    -H "Content-Type: application/json" \
+    -d '{"resetToken":"...","newPassword":"newpassword12"}'
+  ```
 - **Response:**
   ```json
   { "message": "Password reset successful" }
@@ -116,6 +140,12 @@ https://levich-assignment-a93p.onrender.com
 - **Body:**
   ```json
   { "refreshToken": "..." }
+  ```
+- **Curl:**
+  ```sh
+  curl -X POST https://levich-assignment-a93p.onrender.com/refresh-token \
+    -H "Content-Type: application/json" \
+    -d '{"refreshToken":"..."}'
   ```
 - **Response:**
   ```json
@@ -130,6 +160,11 @@ https://levich-assignment-a93p.onrender.com
 - **POST** `/logout`
 - **Headers:**
   - `Authorization: Bearer <accessToken>`
+- **Curl:**
+  ```sh
+  curl -X POST https://levich-assignment-a93p.onrender.com/logout \
+    -H "Authorization: Bearer <accessToken>"
+  ```
 - **Response:**
   ```json
   { "message": "Logged out" }
@@ -140,6 +175,11 @@ https://levich-assignment-a93p.onrender.com
 - **GET** `/permissions/:userId`
 - **Headers:**
   - `Authorization: Bearer <accessToken>`
+- **Curl:**
+  ```sh
+  curl -X GET https://levich-assignment-a93p.onrender.com/permissions/<userId> \
+    -H "Authorization: Bearer <accessToken>"
+  ```
 - **Response:**
   ```json
   {
@@ -162,6 +202,13 @@ https://levich-assignment-a93p.onrender.com
   	"can_delete": 1
   }
   ```
+- **Curl:**
+  ```sh
+  curl -X POST https://levich-assignment-a93p.onrender.com/permissions/<userId> \
+    -H "Authorization: Bearer <accessToken>" \
+    -H "Content-Type: application/json" \
+    -d '{"can_read":1,"can_write":1,"can_delete":1}'
+  ```
 - **Response:**
   ```json
   { "message": "Permissions updated" }
@@ -172,6 +219,11 @@ https://levich-assignment-a93p.onrender.com
 - **GET** `/comments`
 - **Headers:**
   - `Authorization: Bearer <accessToken>`
+- **Curl:**
+  ```sh
+  curl -X GET https://levich-assignment-a93p.onrender.com/comments \
+    -H "Authorization: Bearer <accessToken>"
+  ```
 - **Response:**
   ```json
   [
@@ -193,6 +245,13 @@ https://levich-assignment-a93p.onrender.com
   ```json
   { "content": "This is a test comment." }
   ```
+- **Curl:**
+  ```sh
+  curl -X POST https://levich-assignment-a93p.onrender.com/comments \
+    -H "Authorization: Bearer <accessToken>" \
+    -H "Content-Type: application/json" \
+    -d '{"content":"This is a test comment."}'
+  ```
 - **Response:**
   ```json
   { "id": 1, "content": "This is a test comment." }
@@ -203,6 +262,11 @@ https://levich-assignment-a93p.onrender.com
 - **DELETE** `/comments/:id`
 - **Headers:**
   - `Authorization: Bearer <accessToken>`
+- **Curl:**
+  ```sh
+  curl -X DELETE https://levich-assignment-a93p.onrender.com/comments/<id> \
+    -H "Authorization: Bearer <accessToken>"
+  ```
 - **Response:**
   ```json
   { "message": "Comment deleted" }
@@ -274,3 +338,5 @@ Response:
 ```
 
 ---
+
+For more details, see the code or the Postman collection.
